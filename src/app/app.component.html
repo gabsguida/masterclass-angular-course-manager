@@ -1,0 +1,26 @@
+<!-- Interpolação, colocar o valor descrito na classe entre chaves {{}} 
+        {{title}}
+
+        <br/>
+
+        {{name}}
+-->
+
+<!-- Deve-se importar o ngModel do @angular/forms no app.module.ts -->
+<!-- Adicionando o ngModel apenas entre colchetes 
+  irá somente exibir o valor name não irá atualizá-lo. Ou seja, ligação de
+uma única via 
+      <input [ngModel]="name" name="name" />
+-->
+
+<!-- Adicionando ngModel entre [()], haverá atualização do name. 
+    Nesse caso a ligação será de dupla via 
+      <input [(ngModel)]="name" name="name" /> -->
+
+
+<!-- Adição do Bootstrap -->
+
+<div class="container">
+  <app-course-list></app-course-list>
+</div>
+
