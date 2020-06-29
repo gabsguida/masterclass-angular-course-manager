@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from './course';
+import { CourseService } from './course.service';
 
 @Component({
     selector: 'app-course-list',
@@ -9,27 +10,11 @@ import { Course } from './course';
 export class CourseListComponent implements OnInit{
     courses: Course[] = [];
 
+    // chamará o course.service porque está injectable em root
+    constructor(private courseService: CourseService){}
+
     ngOnInit(): void {
-        this.courses = [
-            {
-                id: 1,
-                name: "Angular: Forms",
-                imageUrl: "../../assets/images/forms.png",
-                price: 99.00,
-                code: 'XPS-3490',
-                duration: 120,
-                rating: 4 
-            },
-            {
-                id: 2,
-                name: "Angular: HTTP",
-                imageUrl: '../../assets/images/http.png',
-                price: 78.60,
-                code: 'XPS-5590',
-                duration: 120,
-                rating: 4.5 
-            }
-        ]
+        this.courses = this.courseService.retrieveAll();
     }
 
 }
