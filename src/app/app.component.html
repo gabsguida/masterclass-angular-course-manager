@@ -18,9 +18,12 @@ uma única via
       <input [(ngModel)]="name" name="name" /> -->
 
 
-<!-- Adição do Bootstrap -->
-
-<div class="container">
-  <app-course-list></app-course-list>
+<app-nav-bar></app-nav-bar>
+<div class="container mt-4">
+  <!-- 
+    <router-outlet> fará o papel do switch das rotas dos nossos componentes. 
+    Nesse caso renderizará o CourseListComponent 
+  -->
+  <router-outlet></router-outlet>
 </div>
 
